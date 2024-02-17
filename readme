@@ -1,13 +1,21 @@
-Usuarios base: 
-"email": "yaiza@gmail.com",
-"contrasenia": "yaiza"
+INICIAR SESIÓN USUARIOS BASE
+  "email": "yaiza@gmail.com",
+  "contrasenia": "yaiza"
 
-"email": "admin@gmail.com",
-"contrasenia": "root"
+  "email": "admin@gmail.com",
+  "contrasenia": "root"
 
-Expresiones regulares
-Nombre--> Solo letras 
-APellidos--> Solo letras y espacios
-Email--> letras, numeros @ letars numeros y .
-contraseña--> Minimo 8 carcateres
+REGISTRO DE USUARIOS
+  Expresiones regulares
+  Nombre--> Solo letras 
+  APellidos--> Solo letras y espacios
+  Email--> letras, numeros @ letars numeros y .
+  contraseña--> Minimo 8 carcateres
+
+BOTÓN DE BÚSQUEDA
+  Reconocimiento de voz
+
+CARRIRTO
+  En desarrollo todavia
+
 
