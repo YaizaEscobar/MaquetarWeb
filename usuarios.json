@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Admin",
+        "apellidos": "root root",
+        "email": "admin@gmail.com",
+        "contrasenia": "root"
+    },
+    {
+        "nombre": "Yaiza",
+        "apellidos": "Escobar Quintana",
+        "email": "yaiza@gmail.com",
+        "contrasenia": "yaiza"
+    }
+]

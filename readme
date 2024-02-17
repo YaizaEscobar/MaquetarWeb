@@ -1,0 +1,80 @@
+Usuarios base: 
+"email": "yaiza@gmail.com",
+"contrasenia": "yaiza"
+
+"email": "admin@gmail.com",
+"contrasenia": "root"
+
+Expresiones regulares
+Nombre--> Solo letras 
+APellidos--> Solo letras y espacios
+Email--> letras, numeros @ letars numeros y .
+contraseña--> Minimo 8 carcateres
+
+ARBOL FICHEROS:
+TIENDA
+-IMG
+-usuarios.json--> JSON de usuarios
+-productos.json--> JSON de productos
+-readme--> readme con pasos a seguir
+-script.js--> TOdas las funciones del js
+-style.css--> estilos de la pagina y fuente
+-indez.html(empezar por esta)
+
+COOKIES/WEBSTOAGE
+-Al iniciar sesion
+-Al aceptar cookies
+
+Multimedia
+videos del collage (zana principal, video collage en index.html)
+
+Notificaciones
+Al eliminar el prodcuto del carrito y al añadirlo
+
+
+iconos 
+logo -https://studio.tailorbrands.com/
+lupa -https://www.flaticon.es/icon-font-gratis/busqueda_3917132?page=1&position=1&term=lupa&origin=search&related_id=3917132
+carrito añadir -https://www.flaticon.es/icon-font-gratis/carrito-de-compra-anadir_3916604?page=1&position=1&term=carrito&origin=search&related_id=3916604
+carrito normal -https://www.flaticon.es/icon-font-gratis/carrito-de-compras_3916598?page=1&position=2&term=carrito&origin=search
+microfono -https://www.flaticon.es/icon-font-gratis/microfono-circular_10742190?page=1&position=4&term=microfono&origin=search&related_id=10742190
+
+Imagenes:
+adidas superStart: -https://muebles-oficina.com/listado/sillas/silla-operativa/silla-ioo/
+adidas UltraBoost: -https://www.flickr.com/photos/fashionrep/29557959630
+adidasNmdR1: -https://glowtk.blogspot.com/2021/07/nerd-x-adidas-nmd-human-race-quay-tro.html
+nike air max: -https://www.flickr.com/photos/kevinv033/2049220070/
+nike react: -https://geeknrun.com/nike-react-para-correr-vivir/
+nike blazer: -http://www.bleucameroun.fr/blog/nike-blazer-mid-beige-femme-Nike-Blazer-Mid-Vintage-Suede-Baskets-Sable-du-d%C3%A9sert-Voile-Femme-444.html
+pumeRSX: -https://www.wired.it/gadget/outdoor/2018/12/12/puma-rs-computer/
+pumaCali: -https://www.wired.it/gadget/videogiochi/2019/12/19/puma-scarpe-per-gamer/
+pumaFureRider: -https://www.nintendoblast.com.br/2020/11/puma-tenis-inspirado-nes-novos-calcados-super-mario.html
+airJordan 1: -https://www.footbasket.com/2017/02/air-jordan-1-retro-og-metallic-red-may.html
+airJordan 4: -https://narmo.milne-library.org/Men&39;s-449738/Sneakers-Shoes-Men&39;s-Nike-Air-Jordan-4-Retro/
+airJordan 11: -https://www.footbasket.com/2017/11/top-10-sneakers-november-2017.html
+
+https://www.pexels.com/
+Imagen 1 baloncesto: Photo by Adedire Abiodun: https://www.pexels.com/photo/a-person-in-black-and-white-nike-basketball-shoes-10241086/
+Imagen 2 panda: Photo by sadegh abdollahi: https://www.pexels.com/photo/a-grayscale-photo-of-a-sneakers-13600672/ 
+Imagen 3 air force: Photo by HamZa NOUASRIA: https://www.pexels.com/photo/pair-of-new-white-snickers-from-nike-12628400/
+Imagen 4 jordan: Photo by Terrance Barksdale: https://www.pexels.com/photo/close-up-of-a-pair-of-sneakers-14906318/
+Imagen 5 jordan blancas: Photo by Ox Street: https://www.pexels.com/photo/jordan-3-retro-fragment-6050919/
+Imagen 6 blanco rojo negra: Photo by Mark Joey Balani: https://www.pexels.com/photo/air-jordan-4-retro-fire-red-nike-15298946/
+Imagen 7: pie zapas negras: Photo by Ray Piedra: https://www.pexels.com/photo/person-in-brown-camouflage-pants-and-black-nike-sb-stefan-janoski-with-black-socks-1478442/
+Imagen 8: Jordan cesped: Photo by Jordan Hyde: https://www.pexels.com/photo/selective-focus-photography-of-air-jordan-1-1032109/
+Imagen 9: 360 cesped : Photo by Frederik Sørensen: https://www.pexels.com/photo/photo-of-running-shoe-2404959/
+Imagen 10: fondo verde verde: Photo by Deybson Mallony: https://www.pexels.com/photo/green-and-white-sneakers-10657971/
+Fondo 1: Photo by YAHIR ARROYO: https://www.pexels.com/photo/dark-dirty-exit-pattern-13960427/
+Iconos:
+cerrarX: -https://feathericons.com/
+www.pngwing.com
+MAS IMAGENES
+Photo by Alex B.: https://www.pexels.com/photo/white-nike-air-force-1-shoes-10726876/ AIR FORCE DOBLE
+Photo by HamZa NOUASRIA: https://www.pexels.com/photo/a-white-nike-shoe-12611630/ AIR FORCE UNA SOLA
+Photo by Terrance Barksdale: https://www.pexels.com/photo/close-up-photo-of-rubber-shoes-11737179/ PANDA 2 HORIZONTAL
+
+VIDEOS
+Vídeo de Kelly    : https://www.pexels.com/es-es/video/un-skater-haciendo-trucos-de-exhibicion-2853795/ SKATE
+Vídeo de cottonbro studio: https://www.pexels.com/es-es/video/paisaje-naturaleza-moda-hombre-5102952/ señor en montaña
+Vídeo de Danny Orloff: https://www.pexels.com/es-es/video/zapato-girando-zapatillas-calzado-4380323/ jordn vueltas
+Vídeo de <a href="https://pixabay.com/es/users/scamlikely-13172735/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=126481">ScamLikely</a> de <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=126481">Pixabay</a> zapas doradas

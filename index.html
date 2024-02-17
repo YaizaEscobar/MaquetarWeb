@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO SHOES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Leaflet JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <!-- Cabecera -->
+    <header class="bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-2 d-flex align-self-center justify-content-center">
+                    <p class="fs-2 m-0">GO SHOES</p>
+                </div>
+
+                <!-- Menú de Navegación -->
+                <div
+                    class="col-sm-4 col-md-7 d-flex align-items-center justify-content-sm-start justify-content-md-end">
+                    <nav class="navbar navbar-expand-md navbar-dark">
+
+                        <!-- Botón para expandir/contraer el menú de navegación en pantallas pequeñas -->
+                        <button id="botonMenu" class="navbar-toggler" type="button" aria-label="Toggle navigation"
+                            onclick="expandirMenuNavegacion()">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Contenedor elementos del menu de navegacion -->
+                        <div class="collapse navbar-collapse " id="menuNavegacion">
+                            <!-- Lista de elementos del menu de navegacion -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a id="enlaceHome" class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="enlaceCatalogo" class="nav-link" href="#">Catálogo</a>
+                                </li>
+                                <!-- Se utiliza el modal para mostrar info de formulario de inicio de sesion  -->
+                                <li class="nav-item">
+                                    <a id="enlaceIniciarSesion" class="nav-link" href="#"
+                                        onclick="abrirModales('modalLogin')">Iniciar Sesión</a>
+                                </li>
+                                <!-- Se utiliza el modal para mostrar info de formulario de registrarse  -->
+                                <li class="nav-item">
+                                    <a id="enlaceRegistrarse" class="nav-link" href="#"
+                                        onclick="abrirModales('modalRegistro')">Registrarse</a>
+                                </li>
+                                <!-- Aparece oculto hasta que se inicia sesión -->
+                                <li class="nav-item">
+                                    <a id="enlaceCerrarSesion" class="nav-link" href="#"
+                                        onclick="abrirModales('modalCerrarSesion')">Cerrar
+                                        Sesión</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Botón de Búsqueda, carrito, datos inicio de sesión -->
+                <div class="col-sm-6 col-md-3 d-flex align-items-center justify-content-start">
+                    <!-- Botón de búsqueda -->
+                    <button id="botonBusqueda" class="btn btn-light" onclick="abrirModales('modalBusqueda')">
+                        <img src="img/iconos/lupa.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+
+                    <!-- Botón de carrito -->
+                    <button id="botonCarrito" class="btn btn-light m-2" onclick="abrirModales('modalCarrito')">
+                        <img src="img/iconos/carrito.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+
+                    <!-- Datos inicio de sesion -->
+                    <div class="ms-2 d-flex align-self-center justify-content-center">
+                        <p id="datosInicioSesion" class="fs-6 m-0">Sesión no iniciada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Zona principal -->
+    <section>
+
+        <!-- Novedades - Carrusel de Imágenes -->
+        <div style="width: 100%;">
+            <div class="row mb-3">
+                <div id="carrusel" class="carousel slide w-100" data-bs-ride="carousel" data-interval="100">
+                    <!-- Indicadores de en que imagen esta -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/banner/carrusel1.png" class="d-block w-100 img-fluid" alt=""
+                                style="max-height: 300px;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/banner/carrusel2.png" class="d-block w-100 img-fluid" alt=""
+                                style="max-height: 300px;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/banner/carrusel3.png" class="d-block w-100 img-fluid" alt=""
+                                style="max-height: 300px;">
+                        </div>
+                    </div>
+                    <!-- Controles derecha izquierda -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Descripción  y seccion de productos-->
+        <div class="container mt-3">
+
+            <!-- Descripcion -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="lead fs-2">EXPLORA NUESTRAS ÚLTIMAS NOVEDADES</p>
+                </div>
+            </div>
+
+            <!-- Cards de productos -->
+            <div class="row justify-content-around mb-3">
+                <!-- Card producto destacado 1 -->
+                <div class="card p-0 col-sm-2 border border-dark"
+                    onmouseover="cambiarImagen('img1Card', 'img/catalogo/airForce2.png')"
+                    onmouseout="restaurarImagen('img1Card', 'img/catalogo/airForce1.png')">
+                    <img id="img1Card" src="img/catalogo/airForce1.png" class="card-img-top img-fluid w-100" alt=""
+                        style="max-height: 200px;">
+                    <div class="card-body border-top border-dark" style="max-height: 200px;">
+                        <h6 class="card-title d-flex justify-content-center">NIKE AIR FORCE</h6>
+                        <div id="cardInfoProducto" class="d-flex justify-content-between">
+                            <p class="card-text">Precio: 99,99€</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card producto destacado 2 -->
+                <div class="card p-0 col-sm-2 border border-dark"
+                    onmouseover="cambiarImagen('img2Card', 'img/catalogo/adidasSamba2.png')"
+                    onmouseout="restaurarImagen('img2Card', 'img/catalogo/adidasSamba1.png')">
+                    <img id="img2Card" src="img/catalogo/adidasSamba1.png" class="card-img-top img-fluid w-100" alt=""
+                        style="max-height: 200px;">
+                    <div class="card-body border-top border-dark">
+                        <h5 class="card-title d-flex justify-content-center">ADIDAS SAMBA</h5>
+                        <div id="cardInfoProducto" class="d-flex justify-content-between">
+                            <p class="card-text">Precio: 89,99€</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card producto destacado 3 -->
+                <div class="card p-0 col-sm-2 border border-dark"
+                    onmouseover="cambiarImagen('img3Card', 'img/catalogo/nikePanda2.png')"
+                    onmouseout="restaurarImagen('img3Card', 'img/catalogo/nikePanda1.png')">
+                    <img id="img3Card" src="img/catalogo/nikePanda1.png" class="card-img-top img-fluid w-100" alt=""
+                        style="max-height: 200px;">
+                    <div class="card-body border-top border-dark">
+                        <h5 class="card-title d-flex justify-content-center">NIKE PANDA</h5>
+                        <div id="cardInfoProducto" class="d-flex justify-content-between">
+                            <p class="card-text">Precio: 119,99€</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card producto destacado 4 -->
+                <div class="card p-0 col-sm-2 border border-dark"
+                    onmouseover="cambiarImagen('img4Card', 'img/catalogo/11Jordan2.png')"
+                    onmouseout="restaurarImagen('img4Card', 'img/catalogo/11Jordan1.png')">
+                    <img id="img4Card" src="img/catalogo/11Jordan1.png" class="card-img-top img-fluid w-100" alt=""
+                        style="max-height: 200px;">
+                    <div class="card-body border-top border-dark">
+                        <h5 class="card-title d-flex justify-content-center">NIKE JORDAN 11</h5>
+                        <div id="cardInfoProducto" class="d-flex justify-content-between">
+                            <p class="card-text">Precio: 219,99€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Descripción  y catalogo de productos-->
+        <div class="container">
+
+            <!-- Descripcion -->
+            <div class="row mt-3">
+                <div class="col-sm-12">
+                    <p class="lead fs-2">NUESTRO CATALOGO</p>
+                </div>
+            </div>
+
+            <!-- Cards de productos -->
+            <div id="seccionCatalogo" class="container">
+            </div>
+
+        </div>
+
+        <!-- Videos Collage -->
+        <div id="contenedorVideoCollage" class="row ">
+            <div class="video-collage col-sm-12 container m-3 justify-content-center">
+                <div id="video1" class="video-item">
+                    <video src="img/videos/video1.mp4" class="object-fit-cover" autoplay loop muted></video>
+                </div>
+                <div id="video2" class="video-item">
+                    <video src="img/videos/video2.mp4" class="object-fit-cover" autoplay loop muted></video>
+                </div>
+                <div id="video3" class="video-item">
+                    <video src="img/videos/video3.mp4" class="object-fit-cover" autoplay loop muted></video>
+                </div>
+                <div id="video4" class="video-item">
+                    <video src="img/videos/video4.mp4" class="object-fit-cover" autoplay loop muted></video>
+                </div>
+                <div id="video5" class="video-item">
+                    <video src="img/videos/video5.mp4" class="object-fit-cover" autoplay loop muted></video>
+                </div>
+                <div id="video6" class="video-item">
+                    <video src="img/videos/video6.mp4" class="object-fit-cover" autoplay loop muted></video>
+                </div>
+                <div id="video7" class="video-item">
+                    <video src="img/videos/video7.mp4" class="object-fit-cover" autoplay loop muted></video>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Información de la Empresa</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-primary">Aviso Legal</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-primary">Privacidad</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-primary">Condiciones de Uso</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-primary">Condiciones de Venta</a></li>
+                    </ul>
+                </div>
+                <h5>Ubicación</h5>
+                <input type="button" value="Encontrarme en el mapa" class="btn btn-secondary" onclick="setFullMap()">
+                <div id="map" class="map map-home" style="margin:12px 0 12px 0;height:400px;"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Barra cookies-->
+    <div id="barraaceptacion" style="display: block;">
+        <div class="inner">
+            Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del
+            Real
+            Decreto-ley 13/2012. Si sigue navegando acepta el uso de cookies.
+            <a id="aCookies" class="ok" onclick="PonerCookie();"><b>Aceptar</b></a>
+            <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+        </div>
+    </div>
+
+    <!-- Modal de Inicio de Sesión -->
+    <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Encabezado del modal  -->
+                <div class="modal-header">
+                    <!-- Titulo dentro del modal  -->
+                    <h4 class="modal-title">INICIO DE SESIÓN </h4>
+                    <!-- Botón de cierre del modal -->
+                    <button id="btnCierreInicioSesion" class="btn btn-light" onclick="cerrarModales('modalLogin')">
+                        <img src="img/iconos/cerrar.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+                </div>
+                <!-- Cuerpo del modal -->
+                <div class="modal-body">
+                    <!-- Formulario de Inicio de Sesión -->
+                    <form onsubmit="iniciarSesion(); return false;">
+                        <!-- Campo de Email -->
+                        <div class="form-group">
+                            <label for="textoEmail">Email *:</label>
+                            <input id="textoEmailIS" type="email" class="form-control" placeholder="Ingresa tu email"
+                                required>
+                        </div>
+                        <!-- Campo de Contraseña -->
+                        <div class="form-group">
+                            <label for="textoContrasenia">Contraseña:</label>
+                            <input id="textoContraseniaIS" type="password" class="form-control"
+                                placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        <!-- Párrafo para el enlace de registro -->
+                        <p class="mt-2">¿Es tu primera vez aquí? <a id="enlaceRegistro" href="#"
+                                onclick="abrirModales('modalRegistro')">Regístrate</a></p>
+                        <p id="mensaje_Error" class="text-danger"></p>
+                        <!-- Botón de Iniciar Sesión -->
+                        <button type="submit" id="btnInciarSesion" class="btn btn-primary mt-1">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro-->
+    <div id="modalRegistro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Encabezado del modal  -->
+                <div class="modal-header">
+                    <!-- Titulo dentro del modal  -->
+                    <h4 class="modal-title">REGISTRATE</h4>
+                    <!-- Botón de cierre del modal -->
+                    <button id="btnCierreRegistro" type="button" class="btn btn-light"
+                        onclick="cerrarModales('modalRegistro')">
+                        <img src="img/iconos/cerrar.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+                </div>
+                <!-- Cuerpo del modal -->
+                <div class="modal-body">
+                    <!-- Formulario de Registro -->
+                    <form onsubmit="validarRegistro(); return false;">
+                        <!-- Campo de Nombre -->
+                        <div class="form-group">
+                            <label for="textoNombre">Nombre *:</label>
+                            <input type="text" class="form-control" id="textoNombre" placeholder="Ingresa tu nombre"
+                                required>
+                            <small id="nombreError" class="text-danger"></small>
+                        </div>
+                        <!-- Campo de Apellidos -->
+                        <div class="form-group">
+                            <label for="textoApellidos">Apellidos *:</label>
+                            <input type="text" class="form-control" id="textoApellidos"
+                                placeholder="Ingresa tus apellidos" required>
+                            <small id="apellidosError" class="text-danger"></small>
+                        </div>
+                        <!-- Campo de Email -->
+                        <div class="form-group">
+                            <label for="textoEmail">Email *:</label>
+                            <input type="email" class="form-control" id="textoEmailR" placeholder="Ingresa tu email"
+                                required>
+                            <small id="emailError" class="text-danger"></small>
+                        </div>
+                        <!-- Campo de Contraseña -->
+                        <div class="form-group">
+                            <label for="textoContrasenia">Contraseña:</label>
+                            <input type="password" class="form-control" id="textoContraseniaR"
+                                placeholder="Ingresa tu contraseña" required>
+                            <small id="contraseniaError" class="text-danger"></small>
+                        </div>
+                        <!-- Botón de Registro-->
+                        <button id="btnEnviarDatosRegistro" type="submit" class="btn btn-primary mt-2"
+                            onclick="registrarUsuario()">Enviar
+                            Datos</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cerrar Sesión-->
+    <div id="modalCerrarSesion" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalCerrarSesionLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Encabezado del modal  -->
+                <div class="modal-header">
+                    <!-- Titulo dentro del modal  -->
+                    <h4 class="modal-title">Cerrar Sesion</h4>
+                    <!-- Botón de cierre del modal -->
+                    <button id="btnCloseModalCierreSesion" type="button" class="btn btn-light"
+                        onclick="cerrarModales('modalCerrarSesion')">
+                        <img src="img/iconos/cerrar.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+                </div>
+                <!-- Cuerpo del modal -->
+                <div class="modal-body">
+                    <p>¿Estas seguro de cerrar la sesión?</p>
+                    <button id="btnAceptar" type="button" class="btn btn-primary"
+                        onclick="cerrarSesion()">Aceptar</button>
+                    <button id="btnAceptar" type="button" class="btn btn-secondary"
+                        onclick="cerrarModales('modalCerrarSesion')">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Mensaje Carrito -->
+    <div id="modalCarritoMensaje" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="modalCarritoMensajeLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Encabezado del modal  -->
+                <div class="modal-header">
+                    <!-- Titulo dentro del modal  -->
+                    <h4 class="modal-title">LO SENTIMOS</h4>
+                    <!-- Botón de cierre del modal -->
+                    <button id="btnCerrarCarritoMensaje" type="button" class="btn btn-light"
+                        onclick="cerrarModales('modalCarritoMensaje')">
+                        <img src="img/iconos/cerrar.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+                </div>
+                <!-- Cuerpo del modal -->
+                <div class="modal-body">
+                    <p class="mt-2">No puedes añadir productos al carrito sin iniciar sesión</p>
+                    <a href="#" id="enlaceIniciarSesionCarrito" onclick="abrirModales('modalLogin')">Inicia
+                        Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Carrito-->
+    <div id="modalCarrito" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Encabezado del modal  -->
+                <div class="modal-header">
+                    <!-- Titulo dentro del modal  -->
+                    <h4 class="modal-title">PRODUCTOS EN EL CARRITO</h4>
+                    <!-- Botón de cierre del modal -->
+                    <button id="btnCerrarCarrito" type="button" class="btn btn-light"
+                        onclick="cerrarModales('modalCarrito')">
+                        <img src="img/iconos/cerrar.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+                </div>
+                <!-- Cuerpo del modal -->
+                <div class="modal-body">
+                    <!-- Contenedor flex para alinear elementos -->
+                    <div class="d-flex flex-column">
+                        <!-- Lista de productos en el carrito -->
+                        <ul id="productosEnCarrito" class="list-group">
+                            <!-- Los productos añadidos al carrito se insertarán aquí -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer del Modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="comprarTodosProdcutos()">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Búsqueda-->
+    <div id="modalBusqueda" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalBusquedaLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Encabezado del modal  -->
+                <div class="modal-header">
+                    <!-- Titulo dentro del modal  -->
+                    <h4 class="modal-title">BUSCA UN PRODUCTO</h4>
+                    <!-- Botón de cierre del modal -->
+                    <button id="btnCerrarBusqueda" type="button" class="btn btn-light"
+                        onclick="cerrarModales('modalBusqueda')">
+                        <img src="img/iconos/cerrar.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+                </div>
+                <!-- Cuerpo del modal -->
+                <div class="modal-body">
+                    <!-- Contenedor flex para alinear elementos -->
+                    <div class="d-flex">
+                        <!-- Campo de búsqueda en el modal -->
+                        <input type="text" class="form-control" id="campoBusquedaModal"
+                            placeholder="Introduce el producto que deseas encontrar">
+                        <!-- Botón de reconocimiento de voz (Speech) en el modal -->
+                        <button class="btn btn-light btn-md ms-2" id="botonSpeechModal"
+                            onclick="iniciarReconocimientoVoz()">
+                            <img src="img/iconos/microfono.svg" alt="" class="img-fluid"
+                                style="max-height: 40px; max-width: 40px;">
+                        </button>
+                    </div>
+                    <div>
+                        <p id="mensajeReconocimientoVoz"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="realizarBusqueda()">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Mas Info del producto-->
+    <div id="modalMasInfo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalBusquedaLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Encabezado del modal  -->
+                <div class="modal-header">
+                    <!-- Titulo dentro del modal  -->
+                    <h4 class="modal-title"></h4>
+                    <!-- Botón de cierre del modal -->
+                    <button id="btnCerrarMasInfo" type="button" class="btn btn-light"
+                        onclick="cerrarModales('modalMasInfo')">
+                        <img src="img/iconos/cerrar.svg" alt="" class="img-fluid"
+                            style="max-height: 30px; max-width: 20px;">
+                    </button>
+                </div>
+                <!-- Cuerpo del modal -->
+                <div class="modal-body">
+                    <div id="contenidoModalMasInfo" class="container justify-content-center" style="max-width: 75%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+
+</html>

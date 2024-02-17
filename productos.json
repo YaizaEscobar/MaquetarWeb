@@ -1,0 +1,84 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Adidas Samba",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Adidas",
+      "precio": 89.99,
+      "descripcion": "Clásica",
+      "imagen": "img/catalogo/adidasSamba1.png",
+      "imagenReves": "img/catalogo/adidasSamba2.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Nike Air Force",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Nike",
+      "precio": 99.99,
+      "descripcion": "Iconica",
+      "imagen": "img/catalogo/airForce1.png",
+      "imagenReves": "img/catalogo/airForce2.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Nike Jordan 11",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Nike",
+      "precio": 219.99,
+      "descripcion": "Elegante",
+      "imagen": "img/catalogo/11Jordan1.png",
+      "imagenReves": "img/catalogo/11Jordan2.png"
+    },
+    {
+      "id": 4,
+      "nombre": "Jordan 1",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Jordan",
+      "precio": 149.99,
+      "descripcion": "Retro",
+      "imagen": "img/catalogo/1jordan1.png",
+      "imagenReves": "img/catalogo/1jordan2.png"
+    },
+    {
+      "id": 5,
+      "nombre": "Jordan 4",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Jordan",
+      "precio": 179.99,
+      "descripcion": "Estilizada",
+      "imagen": "img/catalogo/4jordan1.png",
+      "imagenReves": "img/catalogo/4jordan2.png"
+    },
+    {
+      "id": 6,
+      "nombre": "Nike 97",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Nike",
+      "precio": 129.99,
+      "descripcion": "Futurista",
+      "imagen": "img/catalogo/97nike1.png",
+      "imagenReves": "img/catalogo/97nike2.png"
+    },
+    {
+      "id": 7,
+      "nombre": "Nike 105",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Nike",
+      "precio": 139.99,
+      "descripcion": "Avanzada",
+      "imagen": "img/catalogo/105nike1.png",
+      "imagenReves": "img/catalogo/105nike2.png"
+    },
+    {
+      "id": 8,
+      "nombre": "Nike Panda",
+      "talla": ["EUR 38", "EUR 41"],
+      "marca": "Nike",
+      "precio": 119.99,
+      "descripcion": "Divertida",
+      "imagen": "img/catalogo/nikePanda1.png",
+      "imagenReves": "img/catalogo/nikePanda2.png"
+    }
+  ]
+}
